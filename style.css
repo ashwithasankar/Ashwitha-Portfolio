@@ -10,8 +10,9 @@ background-color: #070f2b;;
 color:#ffffff;
 }
 .container{
-    padding:10px 12px;
-    margin:10px;
+    width:90%;
+    max-width:1200px;
+    margin:auto;
 }
 .logo{
     font: size 3vw;
@@ -118,11 +119,13 @@ margin-bottom: 15px;
 .hero-image{perspective:1000px;}
 
 .moon{
-width: 300px;
-height: 300px;
-overflow:hidden;
-border-radius:50% 50%;
-animation:rotateIn 1.5s ease forwards;
+    width:320px;
+    height:320px;
+    border-radius:50%;
+    overflow:hidden;
+    box-shadow:
+      0 0 25px rgba(146,144,195,.6),
+      0 0 60px rgba(146,144,195,.3);
 }
 
 .moon img{
@@ -144,9 +147,10 @@ margin-bottom:40px;
 }
 
 .skills-container{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:25px;
+    display:grid;
+    grid-template-columns:
+      repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
 }
 
 .skill-box{
@@ -195,18 +199,15 @@ gap:25px;
 }
 
 .project-card{
-position:relative;
-padding:30px;
-border-radius:18px;
-background:rgba(255,255,255,0.05);
-backdrop-filter:blur(14px);
-transition:0.4s ease;
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.08);
+    backdrop-filter:blur(12px);
+    transition:.4s ease;
 }
 
 .project-card:hover{
-transform:translateY(-10px) scale(1.02);
+    transform:translateY(-10px);
 }
-
 .project-content h3{
 color:#9290c3;
 margin-bottom:12px;
@@ -275,10 +276,10 @@ margin-bottom:20px;
 
 /* CONTACT CARDS */
 .contact-cards{
-display:flex;
-flex-direction:column;
-gap:20px;
-margin-bottom:40px;
+    display:grid;
+    grid-template-columns:
+      repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
 }
 
 .contact-card{
@@ -515,4 +516,27 @@ margin-top:40px;
 }
 .nav-links{
     transition:0.3s ease;
+}
+.light-mode{
+    background:#f5f7fb;
+    color:#111;
+}
+
+.light-mode .skill-box,
+.light-mode .project-card,
+.light-mode .contact-card{
+    background:#fff;
+    color:#111;
+}
+
+/*scroll reveal*/
+.hidden{
+    opacity:0;
+    transform:translateY(60px);
+    transition:1s;
+}
+
+.show{
+    opacity:1;
+    transform:translateY(0);
 }
