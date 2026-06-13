@@ -118,17 +118,24 @@ if (menuToggle) {
 ========================== */
 const themeBtn = document.getElementById("themeToggle");
 
-if (themeBtn) {
-  themeBtn.addEventListener("click", () => {
+if(localStorage.getItem("theme") === "light"){
+    document.body.classList.add("light-mode");
+    themeBtn.innerHTML = "☀️";
+}
+
+themeBtn.addEventListener("click",()=>{
+
     document.body.classList.toggle("light-mode");
 
-    if (document.body.classList.contains("light-mode")) {
-      themeBtn.innerHTML = "☀️";
-    } else {
-      themeBtn.innerHTML = "🌙";
+    if(document.body.classList.contains("light-mode")){
+        localStorage.setItem("theme","light");
+        themeBtn.innerHTML = "☀️";
+    }else{
+        localStorage.setItem("theme","dark");
+        themeBtn.innerHTML = "🌙";
     }
-  });
-}
+
+});
 
 /* ==========================
    SCROLL REVEAL ANIMATION

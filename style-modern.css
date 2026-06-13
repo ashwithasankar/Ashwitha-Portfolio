@@ -97,13 +97,6 @@ header{
 
 .hero-image{position:relative;display:flex;justify-content:center}
 
-.hero-image::before{
- content:"";
- position:absolute;
- width:420px;height:420px;
- background:radial-gradient(circle,rgba(139,92,246,.45),transparent 70%);
- z-index:-1;
-}
 
 .moon{
  width:380px;height:500px;
