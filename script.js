@@ -92,12 +92,12 @@ if (form) {
         params
       )
       .then(function () {
-        alert("Message Sent Successfully ✅");
+        const msg=document.getElementById("successMsg");
+        msg.style.display="block";
+        msg.innerHTML =
+    "Your message has been sent successfully. I will contact you shortly.";
         form.reset();
       })
-      .catch(function () {
-        alert("Failed ❌");
-      });
   });
 }
 
